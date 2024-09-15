@@ -30,36 +30,9 @@ Photo by <a href="https://unsplash.com/@brookelark?utm_content=creditCopyText&ut
 ## The magazine editors have some requested modifications for the database before you can perform any queries or analysis for them. Make the following changes to the establishments collection:
 
 ###    1. An exciting new halal restaurant just opened in Greenwich, but hasn't been rated yet. The magazine has asked you to include it in your analysis. Add the following information to the database:
-<table>
-{
-    "BusinessName":"Penang Flavours",
-    "BusinessType":"Restaurant/Cafe/Canteen",
-    "BusinessTypeID":"",
-    "AddressLine1":"Penang Flavours",
-    "AddressLine2":"146A Plumstead Rd",
-    "AddressLine3":"London",
-    "AddressLine4":"",
-    "PostCode":"SE18 7DY",
-    "Phone":"",
-    "LocalAuthorityCode":"511",
-    "LocalAuthorityName":"Greenwich",
-    "LocalAuthorityWebSite":"http://www.royalgreenwich.gov.uk",
-    "LocalAuthorityEmailAddress":"health@royalgreenwich.gov.uk",
-    "scores":{
-        "Hygiene":"",
-        "Structural":"",
-        "ConfidenceInManagement":""
-    },
-    "SchemeType":"FHRS",
-    "geocode":{
-        "longitude":"0.08384000",
-        "latitude":"51.49014200"
-    },
-    "RightToReply":"",
-    "Distance":4623.9723280747176,
-    "NewRatingPending":True
-}
-</table>    
+
+![image](https://github.com/user-attachments/assets/9bb0d675-1b41-4a42-89c7-4484d65ed958)
+ 
 
 ###    2. Find the BusinessTypeID for "Restaurant/Cafe/Canteen" and return only the BusinessTypeID and BusinessType fields.
 
@@ -80,7 +53,8 @@ Photo by <a href="https://unsplash.com/@brookelark?utm_content=creditCopyText&ut
 ## Some notes to be aware of while you are exploring the dataset:
 
            * RatingValue refers to the overall rating decided by the Food Authority and ranges from 1-5. The higher the value, the better the rating.
-                      * Note: This field also includes non-numeric values such as 'Pass', where 'Pass' means that the establishment passed their inspection but isn't given a number rating. We will coerce non-numeric values to nulls during the database setup before converting ratings to integers.
+                      - Note: This field also includes non-numeric values such as 'Pass', where 'Pass' means that the establishment passed their inspection but isn't given a number rating. 
+                        We will coerce non-numeric values to nulls during the database setup before converting ratings to integers.
            * The scores for Hygiene, Structural, and ConfidenceInManagement work in reverse. This means, the higher the value, the worse the establishment is in these areas.
 
 ## Use the following questions to explore the database, and find the answers, so you can provide them to the magazine editors.
