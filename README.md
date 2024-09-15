@@ -4,32 +4,33 @@
 Photo by <a href="https://unsplash.com/@brookelark?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Brooke Lark</a> on <a href="https://unsplash.com/photos/black-and-red-cherries-on-white-bowl-nTZOILVZuOg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
 # Module 12 Challenge
-Instructions
-The UK Food Standards Agency evaluates various establishments across the United Kingdom, and gives them a food hygiene rating. You've been contracted by the editors of a food magazine, Eat Safe, Love, to evaluate some of the ratings data in order to help their journalists and food critics decide where to focus future articles.
+# Instructions
+## The UK Food Standards Agency evaluates various establishments across the United Kingdom, and gives them a food hygiene rating. You've been contracted by the editors of a food magazine, Eat Safe, Love, to evaluate some of the ratings data in order to help their journalists and food critics decide where to focus future articles.
 
-Part 1: Database and Jupyter Notebook Set Up
-Use NoSQL_setup_starter.ipynb for this section of the challenge.
+# Part 1: Database and Jupyter Notebook Set Up
+## Use NoSQL_setup_starter.ipynb for this section of the challenge.
 
-Import the data provided in the establishments.json file from your Terminal. Name the database uk_food and the collection establishments. Copy the text you used to import your data from your Terminal to a markdown cell in your notebook.
+###    1. Import the data provided in the establishments.json file from your Terminal. Name the database uk_food and the collection establishments. Copy the text you used to import your data from your Terminal to a markdown cell in your notebook.
 
-Within your notebook, import the libraries you need: PyMongo and Pretty Print (pprint).
+###    2. Within your notebook, import the libraries you need: PyMongo and Pretty Print (pprint).
 
-Create an instance of the Mongo Client.
+###    3. Create an instance of the Mongo Client.
 
-Confirm that you created the database and loaded the data properly:
+###    4. Confirm that you created the database and loaded the data properly:
 
-List the databases you have in MongoDB. Confirm that uk_food is listed.
-List the collection(s) in the database to ensure that establishments is there.
-Find and display one document in the establishments collection using find_one and display with pprint.
-Assign the establishments collection to a variable to prepare the collection for use.
+            * List the databases you have in MongoDB. Confirm that uk_food is listed.
+            * List the collection(s) in the database to ensure that establishments is there.
+            * Find and display one document in the establishments collection using find_one and display with pprint.
 
-Part 2: Update the Database
-Use NoSQL_setup_starter.ipynb for this section of the challenge.
+###    5. Assign the establishments collection to a variable to prepare the collection for use.
 
-The magazine editors have some requested modifications for the database before you can perform any queries or analysis for them. Make the following changes to the establishments collection:
+# Part 2: Update the Database
+## Use NoSQL_setup_starter.ipynb for this section of the challenge.
 
-An exciting new halal restaurant just opened in Greenwich, but hasn't been rated yet. The magazine has asked you to include it in your analysis. Add the following information to the database:
+## The magazine editors have some requested modifications for the database before you can perform any queries or analysis for them. Make the following changes to the establishments collection:
 
+###    1. An exciting new halal restaurant just opened in Greenwich, but hasn't been rated yet. The magazine has asked you to include it in your analysis. Add the following information to the database:
+<table>
 {
     "BusinessName":"Penang Flavours",
     "BusinessType":"Restaurant/Cafe/Canteen",
@@ -58,22 +59,25 @@ An exciting new halal restaurant just opened in Greenwich, but hasn't been rated
     "Distance":4623.9723280747176,
     "NewRatingPending":True
 }
-Find the BusinessTypeID for "Restaurant/Cafe/Canteen" and return only the BusinessTypeID and BusinessType fields.
+</table>    
 
-Update the new restaurant with the BusinessTypeID you found.
+###    2. Find the BusinessTypeID for "Restaurant/Cafe/Canteen" and return only the BusinessTypeID and BusinessType fields.
 
-The magazine is not interested in any establishments in Dover, so check how many documents contain the Dover Local Authority. Then, remove any establishments within the Dover Local Authority from the database, and check the number of documents to ensure they were deleted.
+###    3. Update the new restaurant with the BusinessTypeID you found.
 
-Some of the number values are stored as strings, when they should be stored as numbers.
+###    4. The magazine is not interested in any establishments in Dover, so check how many documents contain the Dover Local Authority. Then, remove any establishments within the Dover Local Authority from the database, and check the number of documents to ensure they were deleted.
 
-Use update_many to convert latitude and longitude to decimal numbers.
-Use update_many to convert RatingValue to integer numbers.
-Part 3: Exploratory Analysis
-Eat Safe, Love has specific questions they want you to answer, which will help them find the locations they wish to visit and avoid.
+###    5. Some of the number values are stored as strings, when they should be stored as numbers.
 
-Use NoSQL_analysis_starter.ipynb for this section of the challenge.
+            * Use update_many to convert latitude and longitude to decimal numbers.
+            * Use update_many to convert RatingValue to integer numbers.
 
-Some notes to be aware of while you are exploring the dataset:
+# Part 3: Exploratory Analysis
+## Eat Safe, Love has specific questions they want you to answer, which will help them find the locations they wish to visit and avoid.
+
+## Use NoSQL_analysis_starter.ipynb for this section of the challenge.
+
+## Some notes to be aware of while you are exploring the dataset:
 
 RatingValue refers to the overall rating decided by the Food Authority and ranges from 1-5. The higher the value, the better the rating.
 Note: This field also includes non-numeric values such as 'Pass', where 'Pass' means that the establishment passed their inspection but isn't given a number rating. We will coerce non-numeric values to nulls during the database setup before converting ratings to integers.
