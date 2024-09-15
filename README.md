@@ -79,38 +79,49 @@ Photo by <a href="https://unsplash.com/@brookelark?utm_content=creditCopyText&ut
 
 ## Some notes to be aware of while you are exploring the dataset:
 
-RatingValue refers to the overall rating decided by the Food Authority and ranges from 1-5. The higher the value, the better the rating.
-Note: This field also includes non-numeric values such as 'Pass', where 'Pass' means that the establishment passed their inspection but isn't given a number rating. We will coerce non-numeric values to nulls during the database setup before converting ratings to integers.
-The scores for Hygiene, Structural, and ConfidenceInManagement work in reverse. This means, the higher the value, the worse the establishment is in these areas.
-Use the following questions to explore the database, and find the answers, so you can provide them to the magazine editors.
+           * RatingValue refers to the overall rating decided by the Food Authority and ranges from 1-5. The higher the value, the better the rating.
+                      * Note: This field also includes non-numeric values such as 'Pass', where 'Pass' means that the establishment passed their inspection but isn't given a number rating. We will coerce non-numeric values to nulls during the database setup before converting ratings to integers.
+           * The scores for Hygiene, Structural, and ConfidenceInManagement work in reverse. This means, the higher the value, the worse the establishment is in these areas.
 
-Unless otherwise stated, for each question:
+## Use the following questions to explore the database, and find the answers, so you can provide them to the magazine editors.
 
-Use count_documents to display the number of documents contained in the result.
+## Unless otherwise stated, for each question:
 
-Display the first document in the results using pprint.
+           * Use count_documents to display the number of documents contained in the result.
 
-Convert the result to a Pandas DataFrame, print the number of rows in the DataFrame, and display the first 10 rows.
+           * Display the first document in the results using pprint.
 
-Which establishments have a hygiene score equal to 20?
+           * Convert the result to a Pandas DataFrame, print the number of rows in the DataFrame, and display the first 10 rows.
 
-Which establishments in London have a RatingValue greater than or equal to 4?
+###           1. Which establishments have a hygiene score equal to 20?
 
-Hint: The London Local Authority has a longer name than "London" so you will need to use $regex as part of your search.
+###           2. Which establishments in London have a RatingValue greater than or equal to 4?
 
-What are the top 5 establishments with a RatingValue of 5, sorted by lowest hygiene score, nearest to the new restaurant added, "Penang Flavours"?
+                      * Hint: The London Local Authority has a longer name than "London" so you will need to use $regex as part of your search.
 
-Hint: You will need to compare the geocode to find the nearest locations. Search within 0.01 degree on either side of the latitude and longitude.
+###           3. What are the top 5 establishments with a RatingValue of 5, sorted by lowest hygiene score, nearest to the new restaurant added, "Penang Flavours"?
 
-How many establishments in each Local Authority area have a hygiene score of 0? Sort the results from highest to lowest, and print out the top ten local authority areas.
+                      * Hint: You will need to compare the geocode to find the nearest locations. Search within 0.01 degree on either side of the latitude and longitude.
 
-Hint: You will need to use the aggregation method to answer this.
+###           4. How many establishments in each Local Authority area have a hygiene score of 0? Sort the results from highest to lowest, and print out the top ten local authority areas.
 
-The first 5 rows of your resulting DataFrame should look something like this:
+                      * Hint: You will need to use the aggregation method to answer this.
 
-_id	count
-0	Thanet	1130
-1	Greenwich	882
-2	Maidstone	713
-3	Newham	711
-4	Swale	686
+#### The first 5 rows of your resulting DataFrame should look something like this:
+
+![image](https://github.com/user-attachments/assets/fafcff5f-8f6b-4f59-a57e-4df5cb1df10c)
+
+
+
+### References
+#### UK Food Standards AgencyLinks to an external site. (2022). UK food hygiene rating data API. https://ratings.food.gov.uk/open-data/en-GBLinks to an external site.. Contains public sector information licensed under the Open Government Licence v3.0Links to an external site.
+
+#### Accessed Sept 9, 2022 and Sept 12, 2022 with the establishment settings as follows: longitude=51.5072, latitude=-0.1276, maxdistancelimit=4567, pagesize=10000, sortoptionkey=distance, pagenumber=(1,2,3,4,5,6,7,8).
+
+#### This project utilized ChatGPT, a language model developed by OpenAI, for generating text and answering questions. For more information about ChatGPT, visit OpenAI's ChatGPT.
+
+
+
+
+
+
